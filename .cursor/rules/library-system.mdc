@@ -1,0 +1,35 @@
+---
+description: Core VFGNHS Library System architecture, data, security, print, and quality conventions
+alwaysApply: true
+---
+
+# VFGNHS Library System conventions
+
+## Stack and architecture
+
+- Frontend: React 18, TypeScript, Vite, Tailwind 4, and Lucide icons.
+- Backend: Spring Boot 3.5, Java 17, JPA/Flyway, Spring Security, and JWT.
+- Keep public OPAC routes open; enforce STUDENT, TEACHER, and ADMIN permissions server-side.
+- The backend database is the source of truth. Do not use frontend demo records as live data.
+- Preserve compatibility with H2 development and MySQL production migrations.
+
+## Responsive UI
+
+- Every screen must work on mobile, tablet, laptop, and desktop.
+- Build mobile behavior with the feature; do not postpone it to a separate pass.
+- Avoid fixed-width layouts that force page-level horizontal scrolling.
+- Wide data tables may use a clearly bounded horizontal scroller; forms and actions must stack or wrap.
+- Keep touch targets at least 40px and retain keyboard-visible focus states.
+
+## Data and security
+
+- Never expose password hashes or existing passwords. Admins may only reset passwords.
+- Validate permissions, uniqueness, and payloads in the backend, not only in the browser.
+- Never commit production secrets or `.env`; use environment variables for credentials and JWT keys.
+- Keep audit entries free of passwords, tokens, and other secrets.
+
+## Print and quality
+
+- Preserve the approved borrower-card and book-card layouts and A4 print dimensions.
+- Hide application chrome when printing; verify print after global CSS changes.
+- Run frontend typecheck, lint, tests, and build plus backend tests for relevant changes.

@@ -1,0 +1,18 @@
+---
+description: Responsive and accessible UI requirements for the VFGNHS library frontend
+globs: src/**/*.{tsx,css}
+alwaysApply: false
+---
+
+# Responsive UI requirements
+
+- Design and verify at 390px phone, 768px tablet, 1024px laptop, and wide desktop sizes.
+- Prefer fluid grids (`auto-fit`, `minmax`, flexible columns) and content-based sizing.
+- At narrow widths, stack forms, wrap action groups, collapse navigation, and keep primary actions visible.
+- Do not let cards, modals, inputs, images, or page content overflow the viewport.
+- For dense tables, use a bounded `.table-wrap` scroller or a mobile card representation.
+- Keep dialogs within `92vh`, scroll their contents when needed, and use full-width controls on phones.
+- Images must use responsive dimensions and `object-fit`; book covers must retain stable aspect ratios.
+- Keep text readable without zoom and controls at least 40px high.
+- Support keyboard navigation, visible focus, semantic labels, and reduced-motion preferences.
+- Do not alter physical print dimensions while fixing screen responsiveness.
